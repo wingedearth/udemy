@@ -1,0 +1,282 @@
+body { /* CSS1 */
+	background:#7FCDF1 url('../img/pat.png');
+	color:#000000; 
+	margin:0px; padding:0px;
+	font-size: 14pt;
+
+	cursor:url(../img/every.png);
+}
+
+*{ /* CSS2 */
+	/*background:#7198AA;*/
+}
+*[data-type|="large"]{
+	color:black;
+	background:white;
+}
+
+/* CSS1 link pseudo class*/
+a:link{ color: white}
+:visited {color:red}
+
+/* CSS2 user action pseudo class*/
+a:active{color:black}
+input:hover{border-color: red}
+input:focus{border-color: black}
+
+/*
+.article * span{ background: yellow; color:red;}
+*/
+
+
+/* CSS2 attribute selectors */
+p[data-type]{
+	color:white;
+	background: black;
+}
+
+p[data-type="accessible"]{  /* p.accessible */
+	color:black;
+	background: white;
+}
+
+p[data-type~="light"]{ 
+	color:yellow;
+}
+
+p[data-type~="large"]{ 
+	font-size: 2em;
+}
+
+/*p[data-type|="accessible"]{ 
+	background: yellow;
+	color:red;
+}*/
+
+/* CSS3 attribute selectors */
+
+p[class^="access"]{ 
+	background: yellow;
+	color:red;
+}
+
+*[class$="rge"]{ 
+	font-size: 1.5em;
+}
+
+p[class*="le-li"]{ 
+	background: white;
+}
+
+/* CSS2 language selectors */
+/*
+*:lang(fr-ca){
+	background: red;
+	display: none;
+}
+
+*[lang|='fr']{
+	background: red;
+}
+
+
+body *[lang]{
+	display: none;
+}
+
+body *[lang='fr-fr']{
+	display: inherit;
+}
+*/
+/* CSS3 negation pseudo-class */
+
+/*p:not([class]){
+	padding: 10px;
+}*/
+
+body *[lang]:not([lang='fr-fr']){
+	display: none;
+}
+
+/* CSS2 combinator */ 
+   /* Child */
+.article p > span{ background: yellow; color:red;}
+   /* ajacent */
+/*h2 + p{margin-top: 100px}*/
+
+/* CSS3 combinator */ 
+   /* preceded */
+h2 ~ p{margin-top: 20px}
+
+
+/* CSS3 UI Selectors */
+:checked + label {
+	font-size: 1.2em;
+}
+
+:disabled + label {
+	color:#6E93A4;
+}
+
+:enabled + label {
+	color:#333333;
+}
+
+/* CSS2 Content Adding Selectors */
+input[name='language']:enabled + label::before{
+	content:'New: ';
+}
+
+input[name='language']:disabled + label::after{
+	content:'(Soon will be added)';
+}
+
+/* CSS1 Inner-Content Selectors */
+
+p::first-line{
+	font-size: 1.5em;
+}
+
+p::first-letter{
+	margin: .15em;
+	font-size: 4em;
+	float:left;
+}
+
+/* CSS3 Target Selector */
+:target{
+	background: yellow;
+}
+
+section:not(:target) h2{
+	font-size: 1.5em;
+	color:gray;
+}
+
+section:not(:target) p{
+	font-size: .8em;
+	color:gray;
+}
+/* CSS2 Structural psudo-class selectors 
+	E:first-child
+
+   CSS3 Structural psudo-class selectors 
+	E:last-child
+	E:nth-child(n) 
+	E:nth-last-child(n) 
+	E:nth-of-type(n) 
+	E:nth-last-of-type(n) 
+	E:first-of-type
+	E:last-of-type
+	E:only-child  - same as :first-child:last-child
+	E:only-of-type - same as :first-of-type:last-of-type
+	E:empty 
+	E:root 
+	 */
+
+/* CSS2 Structural psudo-class selectors */
+li:first-child{
+	border-top:2pt dashed #000000;
+}
+
+/* CSS3 Structural psudo-class selectors */
+
+li:last-child{
+	border-bottom:2pt solid #000000;
+}
+
+li:nth-child(3n){
+	background:#7BC5E7;
+}
+
+li:nth-child(3n+1){
+	background:#7FCDF1;
+}
+
+li:nth-child(3n+2){
+	background:#96D1EC;
+}
+
+
+li:nth-of-type(2), li:nth-last-of-type(3){
+	background:#F0FFF0;
+}
+
+span:only-of-type{
+	background: yellow;
+	color:red;
+}
+
+
+
+h1, h2, h3 {
+	font-size:2em;
+	text-transform: capitalize;
+	margin: 0px;
+}
+h1{	font-size:3em;
+	background-color: rgba(255,255,255,.2);
+	text-align: center;
+}
+
+h2.inner{font-size:30px}
+h3{font-size:25px}
+
+
+.article, #footer{width: 98%;padding: 1% }
+.article{ /* CSS1 */
+	background-color:rgba(255,0,0,.1)
+	
+	}
+.article p{
+	width:90%;
+	max-width:450px;
+	min-width:360px;
+	background: rgba(100,100,100,.5);
+	margin:0px 10px 5px 0px;
+	
+	padding:40px;
+	padding-right:50px;
+	float: left; 
+	text-align: justify;
+	font-family: 'New Courier',Courier, monospace;
+	text-indent: 3em;
+
+}
+
+.clr{
+	clear: both;
+}
+
+#footer{ /* CSS1 */
+	background-color:#780e20;
+	width:96%;
+	height: 20px;
+	padding: 2%;
+	position: fixed;
+	bottom: 0px;
+	z-index: 1;
+	clip: rect(17px, 283px, 56px, 18px);
+}
+
+.everything{
+	width:24px;
+	height: 30px;
+
+	background: url(../img/every.png) no-repeat;
+	display: block;
+	float:left;
+	margin-top: -5px;
+	margin-right: 10px;
+}
+.everything:hover{
+	background-position: 0px -30px;
+	cursor: help; 
+	/* [ [<uri> ,]* [ (auto) | crosshair | default | pointer | move | e-resize | ne-resize | nw-resize | n-resize | se-resize | sw-resize | s-resize | w-resize | text | wait | help | progress ] ] | inherit	  */
+}
+
+#footer span span{color:orange;}
+
+
+
+

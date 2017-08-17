@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr-fr">
+<head>
+<meta charset="utf-8">
+<title>CSS3 Selectors</title>
+<meta name="keywords" content="Overview of CSS3 selectors">
+<link rel="stylesheet" href="css/style.css" />
+<script src ="http://code.jquery.com/jquery-1.11.2.js"></script>
+<script src="js/script.js"></script>
+
+
+</head>
+<body>
+    <input type="radio" name="language" id="en" value="en" />
+    <label for="en">English </label>
+    <input type="radio" name="language" id="frfr" value="fr-fr" checked='checked' />
+    <label for="frfr">French French</label>
+    <input type="radio" name="language" id="frca" value="fr-ca" />
+    <label for="frca">Canadian French</label>
+    <input type="radio" name="language" id="frde" value="fr-de" disabled="disabled" />
+    <label for="frde">Denmark French</label>
+
+
+
+	<h1>CSS3 Selectors</h1>
+    <ul>
+        <h2>What's inside?</h2>
+        <li><a href="#uni">The Universal Selector</a></li>
+        <li><a href="#links">Linking and Action Selectors</a></li>
+        <li><a href="#attr">CSS2 Attribute Selectors</a></li>
+        <li><a href="css3attr">CSS3 Attribute Selectors</a></li>
+        <li><a href="local">Localizing your site with language selectors</a></li>
+        <li>...</li>
+        <h2>Check our links:</h2>
+        <li><a href="http://02geek.com/">Learn more on 02GEEK</a></li>
+        <li><a href="http://02skills.com/">Learn more on 02SKILLS</a></li>
+
+    </ul>
+    	<div class="article">
+            <h2>Lorem ipsum dolor sit amet</h2>
+            <p class="multi">
+            Lorem  ipsum dolor  sit amet, consectetur adipiscing
+             elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute <b><span>irure dolor in</span></b> reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi <span>ut aliquip ex ea</span> commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt <span>mollit anim id</span> est laborum.
+            </p>
+        </div>
+        <h2 class='clr'>Lorem ipsum dolor sit amet</h2>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. <a href="http://02geek.com/?be=fresh1">It has survived not only five centuries</a>, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        <p data-type="accessible light large">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        <p class="accessible-light-large">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+       <h2>Lorem ipsum dolor sit amet</h2>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+        <input type="text" />
+        <input type="text" />
+        <input type="text" />
+
+        <h2 lang="en">bicycle (english)</h2>
+        <h2 lang="fr-ca">bicyclette (canada)</h2>
+        <h2 lang="fr-fr">vélo (france)</h2>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        <section id="uni">
+            <h2>The Universal Selector</h2>
+            <p>Let's start exploring the world of selectors with a quick overview of the basic selector types and the joker card/selector. This is just a brief overview: for in-depth learning of how CSS rules work please visit our Absolute CSS course. By the end of this lesson you will have a refresher of the core CSS selectors available since CSS1 and will be introduced to the Universal selector. </p>
+        </section>
+        <section id="links">
+            <h2>Linking and Action Selectors</h2>
+            <p>In the last lecture we saw the core css selectors(id,class and element) as we wrapped up the chapter with the modern new joker selector(the universal selector). In this lecture we turn out attention to action and actionable related pseudo classes. By the end of this lecture, you will know how to control the colors of actions and links in CSS and will be up-to-date with the changes that have taken place with them.  </p>
+        </section>
+        <section id="attr">
+            <h2>CSS2 Attribute Selectors</h2>
+            <p>In the last lecture we discovered how to control the colors of actions and links in CSS we are now moving into the world of attributes where we will stay in the next two lectures. In this lecture we will cover the new CSS2 attribute selectors and how tow ork with them while in the next lecture we will cover the CSS3 ones.  By the end of this lecture, you will know how to work with CSS2 Attribute Selectors.</p>
+        </section>
+        <section id="css3attr">
+            <h2>CSS3 Attribute Selectors</h2>
+            <p>In the last lecture we learnt how to work with attribute selectors, the've been around since CSS2. A few new powerful features have been added into CSS rules with the birth of CSS3 Selectors. In this lecture we will explore the new CSS3 attribute Selectors. By the end of this lesson, you will know how to work with the new CSS3 Attribute Selectors.</p>
+        </section>
+        <section id="local">
+            <h2>Localizing your site with language selectors</h2>
+            <p>You might speak only one language, but yet there are differences in the way users expect content to look like when they are of different countries. The language attribute enables you to create small custom rules that would apply to specific sub-languages at ease without needing to create separate pages for each sub language(such as american english vs. British english). By the end of this lesson, you will know the basics of how to work with the lang attribute in HTML and the lang CSS selector.</p>
+        </section>
+
+    	<div id="footer">
+			<a class="everything" href="http://02geek.com/"></a>
+        	<span>goto(<span>'02GEEK'</span>);</span>
+        </div>
+</body>
+</html>

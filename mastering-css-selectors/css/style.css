@@ -1,0 +1,82 @@
+body { /* CSS1 */
+	background:#7FCDF1 url('../img/pat.png');
+	color:#000000; 
+	margin:0px; padding:0px;
+	font-size: 14pt;
+
+	cursor:url(../img/every.png);
+}
+
+
+
+h1, h2, h3 {
+	font-size:2em;
+	text-transform: capitalize;
+	margin: 0px;
+}
+h1{	font-size:3em;
+	background-color: rgba(255,255,255,.2);
+	text-align: center;
+}
+
+h2.inner{font-size:30px}
+h3{font-size:25px}
+
+
+.article, #footer{width: 98%;padding: 1% }
+.article{ /* CSS1 */
+	background-color:rgba(255,0,0,.1)
+	
+	}
+.article p{
+	width:90%;
+	max-width:450px;
+	min-width:360px;
+	background: rgba(100,100,100,.5);
+	margin:0px 10px 5px 0px;
+	
+	padding:40px;
+	padding-right:50px;
+	float: left; 
+	text-align: justify;
+	font-family: 'New Courier',Courier, monospace;
+	text-indent: 3em;
+
+}
+
+.clr{
+	clear: both;
+}
+
+#footer{ /* CSS1 */
+	background-color:#780e20;
+	width:96%;
+	height: 20px;
+	padding: 2%;
+	position: fixed;
+	bottom: 0px;
+	z-index: 1;
+	clip: rect(17px, 283px, 56px, 18px);
+}
+
+.everything{
+	width:24px;
+	height: 30px;
+
+	background: url(../img/every.png) no-repeat;
+	display: block;
+	float:left;
+	margin-top: -5px;
+	margin-right: 10px;
+}
+.everything:hover{
+	background-position: 0px -30px;
+	cursor: help; 
+	/* [ [<uri> ,]* [ (auto) | crosshair | default | pointer | move | e-resize | ne-resize | nw-resize | n-resize | se-resize | sw-resize | s-resize | w-resize | text | wait | help | progress ] ] | inherit	  */
+}
+
+#footer span span{color:orange;}
+
+
+
+
