@@ -1,7 +1,7 @@
 /****************
 Reset
 ****************/
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -15,8 +15,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
   margin: 0;
@@ -27,7 +27,7 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
 }
@@ -54,28 +54,28 @@ table {
   outline: none;
 }
 strong {
-  font-weight: bold; 
+  font-weight: bold;
 }
 /* micro clear fix */
 .grouping:before,
 .grouping:after {
   content: " ";
-  display: table; 
+  display: table;
 }
 .grouping:after {
-  clear: both; 
+  clear: both;
 }
 img, iframe, video, object {
-  max-width: 100%; 
+  max-width: 100%;
 }
 /***************
 Global
 ***************/
 ::-moz-selection {
-  background-color: #eb2428; 
+  background-color: #eb2428;
 }
 ::selection {
-  background-color: #eb2428; 
+  background-color: #eb2428;
 }
 
 .wrapper {
@@ -86,7 +86,7 @@ body {
   background-color: #dcdcdc;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 100;
-  font-size: 16px; 
+  font-size: 16px;
 }
 a {
   text-decoration: none;
@@ -96,13 +96,13 @@ h1 {
   font-weight: 700;
   font-size: 80px;
   color: #0072ae;
-  margin-bottom: 10px; 
+  margin-bottom: 10px;
 }
 h2 {
   font-size: 30px;
   margin-bottom: 10px;
   color: #eb2428;
-  font-weight: 700; 
+  font-weight: 700;
 }
 p {
   line-height: 1.6;
@@ -114,35 +114,35 @@ p {
 Modular Styles
 ***************/
 .float-left {
-  float: left; 
+  float: left;
 }
 .float-right {
-  float: right; 
+  float: right;
 }
 .clear {
-  clear: both; 
+  clear: both;
 }
 .bold {
-  font-weight: bold; 
+  font-weight: bold;
 }
 .hidden,
 .hide {
-  display: none; 
+  display: none;
 }
 .relative {
-  position: relative; 
+  position: relative;
 }
 .absolute {
-  position: absolute; 
+  position: absolute;
 }
 .block {
-  display: block; 
+  display: block;
 }
 .inline-block {
-  display: inline-block; 
+  display: inline-block;
 }
 .text-centered {
-  text-align: center; 
+  text-align: center;
 }
 /****************
 Buttons
@@ -228,6 +228,12 @@ Go Premium
 /****************
 nav
 ****************/
+nav {
+background-color: #fff;
+}
+nav img {
+  width: 160px;
+}
 .primary-nav {
   float: right;
 }
@@ -240,6 +246,13 @@ nav
   width: 150px;
   border-left: 1px solid #ada791;
 }
+.primary-nav > li:first-child a {
+  border-left: none;
+}
+.primary-nav > li:nth-child(2) a {
+  background-color: deeppink;
+  color: #fff;
+}
 nav li a {
   font-family: Arial, Helvetica, sans-serif;
   color: #766e65;
@@ -249,13 +262,13 @@ nav li a {
   -webkit-transition: 0.15s background-color linear;
   -moz-transition: 0.15s background-color linear;
   -o-transition: 0.15s background-color linear;
-  transition: 0.15s background-color linear; 
+  transition: 0.15s background-color linear;
 }
 nav li a:focus,
 nav li a:hover,
 nav li a.active {
   background-color: #eb2428;
-  color: #fff; 
+  color: #fff;
 }
 /****************
 Interior Pages
@@ -314,5 +327,3 @@ Interior Pages
 .column:first-child {
   margin-left: 0;
 }
-
-
