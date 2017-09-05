@@ -1,7 +1,7 @@
 /****************
 Reset
 ****************/
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -15,8 +15,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
   margin: 0;
@@ -27,7 +27,7 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
 }
@@ -54,19 +54,19 @@ table {
   outline: none;
 }
 strong {
-  font-weight: bold; 
+  font-weight: bold;
 }
 /* micro clear fix */
 .grouping:before,
 .grouping:after {
   content: " ";
-  display: table; 
+  display: table;
 }
 .grouping:after {
-  clear: both; 
+  clear: both;
 }
 img, iframe, video, object {
-  max-width: 100%; 
+  max-width: 100%;
 }
 html {
   box-sizing: border-box;
@@ -133,10 +133,10 @@ Fonts
 Global
 ***************/
 ::-moz-selection {
-  background-color: #eb2428; 
+  background-color: #eb2428;
 }
 ::selection {
-  background-color: #eb2428; 
+  background-color: #eb2428;
 }
 
 .wrapper {
@@ -148,7 +148,7 @@ body {
   background-color: #dcdcdc;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 100;
-  font-size: 16px; 
+  font-size: 16px;
 }
 a {
   text-decoration: none;
@@ -158,15 +158,19 @@ h1 {
   font-weight: 700;
   font-size: 100px;
   color: #0072ae;
-  margin-bottom: 10px; 
+  margin-bottom: 10px;
   font-style: normal;
   font-weight: bold;
+  font-family: 'League Gothic';
+  font-style: normal;
 }
 h2 {
   font-size: 30px;
   margin-bottom: 10px;
   color: #eb2428;
-  font-weight: 700; 
+  font-weight: 700;
+  font-family: 'League Gothic';
+  font-style: italic;
 }
 p {
   line-height: 1.6;
@@ -177,35 +181,35 @@ p {
 Modular Styles
 ***************/
 .float-left {
-  float: left; 
+  float: left;
 }
 .float-right {
-  float: right; 
+  float: right;
 }
 .clear {
-  clear: both; 
+  clear: both;
 }
 .bold {
-  font-weight: bold; 
+  font-weight: bold;
 }
 .hidden,
 .hide {
-  display: none; 
+  display: none;
 }
 .relative {
-  position: relative; 
+  position: relative;
 }
 .absolute {
-  position: absolute; 
+  position: absolute;
 }
 .block {
-  display: block; 
+  display: block;
 }
 .inline-block {
-  display: inline-block; 
+  display: inline-block;
 }
 .text-centered {
-  text-align: center; 
+  text-align: center;
 }
 /****************
 Buttons
@@ -305,20 +309,20 @@ nav figure {
   position: absolute;
   top: -20px;
   left: 50px;
-  -webkit-animation: crazyShark 1s ease;  
+  -webkit-animation: crazyShark 1s ease;
   animation: crazyShark 1s ease;
 }
 @-webkit-keyframes crazyShark {
-  0% { -webkit-transform: translate(45%, 35%);opacity: 0;}   
+  0% { -webkit-transform: translate(45%, 35%);opacity: 0;}
   33% {-webkit-transform: translate(20%, 10%) rotate(90deg);}
   66% {-webkit-transform: translate(5%, 25%);}
-  100% {-webkit-transform: translate(0%) rotate(0deg);opacity: 1;} 
+  100% {-webkit-transform: translate(0%) rotate(0deg);opacity: 1;}
 }
 @keyframes crazyShark {
-  0% {transform: translate(45%, 35%);opacity: 0;}   
+  0% {transform: translate(45%, 35%);opacity: 0;}
   33% {transform: translate(20%, 10%) rotate(90deg);}
   66% {transform: translate(5%, 25%);}
-  100% {transform: translate(0%) rotate(0deg);opacity: 1;} 
+  100% {transform: translate(0%) rotate(0deg);opacity: 1;}
 }
 .primary-nav {
   float: right;
@@ -344,13 +348,13 @@ nav li a {
   -webkit-transition: 0.15s background-color linear;
   -moz-transition: 0.15s background-color linear;
   -o-transition: 0.15s background-color linear;
-  transition: 0.15s background-color linear; 
+  transition: 0.15s background-color linear;
 }
 nav li a:focus,
 nav li a:hover,
 nav li a.active {
   background-color: #eb2428;
-  color: #fff; 
+  color: #fff;
 }
 /****************
 Drop Down Menu
@@ -377,18 +381,18 @@ Drop Down Menu
 }
 .has-submenu:hover ul {
   display: block;
-  -webkit-animation: slideDown .5s ease;  
-  animation: slideDown .5s ease;           
+  -webkit-animation: slideDown .5s ease;
+  animation: slideDown .5s ease;
 }
 @-webkit-keyframes slideDown {
-  0% { -webkit-transform: translateY(-100%);opacity: 0;}   
+  0% { -webkit-transform: translateY(-100%);opacity: 0;}
   90% {-webkit-transform: translateY(10%);}
-  100% {-webkit-transform: translateY(0%);opacity: 1;} 
+  100% {-webkit-transform: translateY(0%);opacity: 1;}
 }
 @keyframes slideDown {
-  0% { transform: translateY(-100%);opacity: 0;}   
+  0% { transform: translateY(-100%);opacity: 0;}
   90% {transform: translateY(10%);}
-  100% {transform: translateY(0%);opacity: 1;} 
+  100% {transform: translateY(0%);opacity: 1;}
 }
 /****************
 Interior Pages
