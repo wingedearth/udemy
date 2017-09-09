@@ -403,11 +403,13 @@ Interior Pages
 .column:first-child {
   margin-left: 0;
 }
+.column figure {
+  max-width: 250px;
 /***************
 Footer
 ***************/
 footer {
-  background: #fff url('../images/seaweed.png') repeat-x 0 0;
+  background: #fff url('../images/seaweed.svg') repeat-x 0 0;
   background-size: 200px 100px;
   padding: 142px 0;
   font-size: 14px;
@@ -472,7 +474,6 @@ footer li {
   .column figure {
     margin: 0 auto;
     width: 100%; 
-    max-width: 250px;
   }
   .column h2 {
     text-align: center;

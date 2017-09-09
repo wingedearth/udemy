@@ -571,9 +571,13 @@ footer li {
 /***************
 Retina, Background Images
 ***************/
-
-
-
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi) {
+  footer {
+    background-image: url('../images/seaweed@2x.jpg');
+  }
+}
 
 
 
