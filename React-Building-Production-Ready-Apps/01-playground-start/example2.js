@@ -1,9 +1,23 @@
+// import TodoList from './TodoList';
 function TodoList (props) {
+  const {todos, onSetTodoStatus} = props;
+
   return (
     <ul>
       {
-        props.todos.map((todo, indx) => {
-          return (<li key={indx}>{todo.text}</li>);
+        todos.map((todo, indx) => {
+          return (
+            <li key={indx}>
+              <label>
+                <input type="checkbox" checked={todo.isCompleted} onChange={e => onSetTodoStatus(todo, e.target.checked)} />
+                {
+                  todo.isCompleted
+                  ? <del>{todo.text}</del>
+                  : todo.text
+                }
+              </label>
+            </li>
+          )
         })
       }
     </ul>
@@ -25,12 +39,25 @@ class AppComponent extends React.Component {
       ]
     };
     this.onShowCompletedChanged = this.onShowCompletedChanged.bind(this);
+    this.setTodoStatus = this.setTodoStatus.bind(this);
   }
 
   onShowCompletedChanged (e) {
     this.setState({
       filter: {showCompleted: e.target.checked}
     });
+  }
+
+  setTodoStatus(todo, isCompleted) {
+    const {todos} = this.state;
+    this.setState({
+      todos: todos.map(oldTodo => {
+        if (oldTodo.id != todo.id) {
+          return oldTodo;
+        }
+        return Object.assign({}, oldTodo, {isCompleted});
+      })
+    })
   }
 
   render () {
@@ -47,9 +74,7 @@ class AppComponent extends React.Component {
           Show Completed
           <input type="checkbox" checked={filter.showCompleted} onChange={this.onShowCompletedChanged} />
         </label>
-        <TodoList todos={filteredTodos}>
-          <li>I am a child.</li>
-        </TodoList>
+        <TodoList onSetTodoStatus={this.setTodoStatus} todos={filteredTodos} />
       </div>
     );
   }
