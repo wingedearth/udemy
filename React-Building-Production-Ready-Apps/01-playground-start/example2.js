@@ -24,6 +24,39 @@ function TodoList (props) {
   );
 }
 
+class TodoForm extends React.Component {
+  constructor (props) {
+    super(props);
+    this.onSubmit = this.onSubmit.bind(this);
+  }
+
+  focusInput () {
+    this._todoText.focus();
+  }
+
+  onSubmit(e) {
+    e.preventDefault();
+    const todoText = this._todoText.value.trim();
+    if (todoText.length != 0) {
+      this._todoText.value = '';
+      this.props.onAddTodo(todoText);
+    }
+  }
+
+  render () {
+    return (
+      <form onSubmit={this.onSubmit}>
+        <input type="text" ref={input => this._todoText = input} />
+        <button>Add Todo</button>
+      </form>
+    );
+  }
+}
+
+TodoForm.propTypes = {
+  onAddTodo: React.PropTypes.func.isRequired
+};
+
 class AppComponent extends React.Component {
   constructor (props) {
     super(props);
@@ -40,6 +73,7 @@ class AppComponent extends React.Component {
     };
     this.onShowCompletedChanged = this.onShowCompletedChanged.bind(this);
     this.setTodoStatus = this.setTodoStatus.bind(this);
+    this._onAddTodo = this._onAddTodo.bind(this);
   }
 
   onShowCompletedChanged (e) {
@@ -60,6 +94,22 @@ class AppComponent extends React.Component {
     })
   }
 
+  _onAddTodo (text) {
+    console.log('todos:', this.state.todos);
+    this.setState({
+      todos: this.state.todos.concat({
+        id: this.nextTodoId++,
+        text,
+        isCompleted: false
+      })
+    });
+    console.log('todos (after):', this.state.todos);
+  }
+
+  componentDidMount () {
+    this._todoForm.focusInput();
+  }
+
   render () {
     console.log('Rendered');
     const {filter, todos} = this.state;
@@ -75,6 +125,7 @@ class AppComponent extends React.Component {
           <input type="checkbox" checked={filter.showCompleted} onChange={this.onShowCompletedChanged} />
         </label>
         <TodoList onSetTodoStatus={this.setTodoStatus} todos={filteredTodos} />
+        <TodoForm onAddTodo={this._onAddTodo} ref={form => this._todoForm = form} />
       </div>
     );
   }
