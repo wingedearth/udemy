@@ -1,14 +1,25 @@
 import express from 'express';
 import http from 'http';
-import {isDevelopment} from './settings';
-import path from 'path';
-import pkg from '../package.json';
+import cors from 'cors';
 import versionController from './controllers/versionController';
 import defaultController from './controllers/defaultController';
+
+
 
 // Setup
 const app = express();
 const server = new http.Server(app);
+
+app.use(cors(
+	{
+		"origin": "*",
+		"methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
+		"preflightContinue": false,
+		"optionsSuccessStatus": 204
+	}
+));
+
+
 
 // Configuration
 app.set('view engine', 'pug');

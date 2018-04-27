@@ -19,22 +19,23 @@ function getClientEntry(isDebug) {
 			'webpack/hot/only-dev-server'
 		);
 	}
+
+	return clientEntry;
 }
 
 function createConfig(isDebug) {
-	const devtool = isDebug ? 'cheap-module-source-map' : null;
+	const devtool = isDebug ? 'eval-source-map' : null;
 	console.log('process.env.NODE_ENV:', process.env.NODE_ENV);
 	console.log('devtool:', devtool);
 	const plugins = getPlugins(isDebug);
 	const loaders = getLoaders(isDebug);
-	const clientEntry = getClientEntry(isDebug);
 	const publicPath = isDebug ? 'http://localhost:8080/build/' : '/build/';
 
 	return {
 		name: 'client',
 		devtool,
 		entry: {
-			app: clientEntry,
+			app: getClientEntry(isDebug),
 			vendor
 		},
 		output: {
