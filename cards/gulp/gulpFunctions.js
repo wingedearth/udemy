@@ -4,6 +4,7 @@ import child_process from 'child_process';
 import webpack from 'webpack';
 import webpackConfig from '../webpack.config';
 import WebpackDevServer from 'webpack-dev-server';
+import path from 'path';
 
 const $ = require('gulp-load-plugins')();
 
@@ -86,7 +87,10 @@ export function watchClient () {
 	const server = new WebpackDevServer(compiler, {
 		publicPath: '/build/',
 		hot: true,
-		stats: consoleStats
+		stats: consoleStats,
+		headers: {
+			'Access-Control-Allow-Origin': '*'
+		}
 	});
 
 	server.listen(8080, () => {});
