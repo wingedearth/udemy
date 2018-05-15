@@ -1,18 +1,32 @@
 import './client.scss';
+import React from 'react';
 import ReactDOM from 'react-dom';
+import {Router, browserHistory} from 'react-router';
 
-console.log('Hello from the client! This is a change!');
+// --------------------------------------
+// Render
 
 function main() {
 	const routes = require('./routes').default();
+	console.log('routes:', routes);
 
-	ReactDOM.render(routes, document.getElementById('mount'));
+	ReactDOM.render(
+		<Router history={browserHistory}>
+			{routes}
+		</Router>,
+		document.getElementById('mount')
+	);
 }
 
-main();
+// --------------------------------------
+// Misc
 
 if (module.hot) {
 	module.hot.accept('./routes', () => {
 		main();
 	});
 }
+
+// --------------------------------------
+// Go
+main();

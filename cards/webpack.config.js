@@ -3,22 +3,7 @@ var _ = require('lodash');
 const getPlugins = require('./webpack/getPlugins');
 const getLoaders = require('./webpack/getLoaders');
 const vendor = require('./webpack/vendor');
-
-function getClientEntry(isDebug) {
-	const clientEntry = [
-		'./src/client/client.js'
-	];
-
-	if (isDebug) {
-		clientEntry.unshift(
-			'react-hot-loader/patch',
-			'webpack-dev-server/client?http://localhost:8080/',
-			'webpack/hot/only-dev-server'
-		);
-	}
-
-	return clientEntry;
-}
+const getClientEntry = require('./webpack/getClientEntry');
 
 function createConfig(isDebug) {
 	console.log('isDebug:', isDebug);

@@ -18,14 +18,7 @@ import defaultController from './controllers/defaultController';
 const app = express();
 const server = new http.Server(app);
 
-// app.use(allowCrossDomain);
 app.use(cors());
-// app.use(function(req, res, next) {
-// 	res.header("Access-Control-Allow-Origin", "*");
-// 	res.header('Access-Control-Allow-Methods', 'DELETE, PUT, GET, POST');
-// 	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-// 	next();
-// });
 
 // Configuration
 app.set('view engine', 'pug');
