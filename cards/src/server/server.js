@@ -27,9 +27,9 @@ app.set('view engine', 'pug');
 // console.log('viewsPath:', app.get('views'));
 app.use(express.static('public'));
 
-
-app.get('/', defaultController);
 app.get('/version', versionController);
+app.get('/', defaultController); // root route
+app.get('*', defaultController); // fallback route
 
 // Startup
 const port = process.env.PORT || 3000;
