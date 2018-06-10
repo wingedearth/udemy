@@ -17,13 +17,13 @@ gulp.task('compileServer', compileServer);
 gulp.task('watchServer', watchServer);
 gulp.task('runServer', runServer);
 gulp.task('server:build',
-	gulp.series(
-		'server:clean',
-		'compileServer'
-	)
+    gulp.series(
+        'server:clean',
+        'compileServer'
+    )
 );
 
-gulp.task('server:watch', 
+gulp.task('server:watch',
 	gulp.series(
 		'server:build',
 		'watchServer'
@@ -31,11 +31,13 @@ gulp.task('server:watch',
 
 gulp.task(
 	'server:dev',
-	gulp.parallel(
-		'watchServer',
-		'runServer'
-	)
-);
+	gulp.series(
+		"server:build",
+		gulp.parallel(
+			'watchServer',
+			'runServer'
+		)
+    ));
 
 gulp.task('test', testServer);
 
@@ -50,8 +52,8 @@ gulp.task('server:test:dev',
 		gulp.parallel(
 			'watchServer',
 			runServerTests
-		)
-	)
+        )
+    )
 );
 
 
@@ -64,14 +66,14 @@ gulp.task(
 	gulp.series(
 		'client:clean',
 		buildClient
-	)
-);
+	));
+
 gulp.task(
 	'client:dev',
 	gulp.series(
 		'client:clean',
 		watchClient
-	)
+    )
 );
 
 gulp.task('dev', gulp.parallel('server:dev', 'client:dev'));
