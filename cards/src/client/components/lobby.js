@@ -3,6 +3,10 @@ import React, {Component} from 'react';
 import Chat from './chat';
 
 class LobbyContainer extends Component {
+	static contextTypes = {
+		stores: React.PropTypes.object.isRequired
+	};
+	
 	constructor(props) {
 		super(props);
 
@@ -16,6 +20,8 @@ class LobbyContainer extends Component {
 	}
 
 	render() {
+		console.log('this.context.stores:', this.context.stores);
+
 		const games = [
 			{title: "Game 1", id: 1, players: ["Andy", "Jenn", "Caspy"]},
 			{title: "Game 2", id: 2, players: ["Andrew", "Jennifer", "Caspian"]},

@@ -1,46 +1,43 @@
-import _ from 'lodash';
-import {Observable} from 'rxjs';
-import * as A from './actions';
+import _ from "lodash";
+import { Observable } from "rxjs";
+import * as A from "./actions";
 
 export class Dispatcher {
-    constructor() {
-        this._handlers = {};
-        this._emitBuffer = [];
-        this._inEmit = false;
-    }
+	constructor() {
+		this._handlers = {};
+		this._emitBuffer = [];
+		this._inEmit = false;
+	}
 
-    on(typeOrCallbacks, callback = null, statusFilter = null) {
-        if (_.isObject(typeOrCallbacks)) {
-            const unreg = _.map(
-                typeOrCallbacks,
-                (cb, keyy) => this.on(keyy, cb, statusFilter));
-            
-                return () => unreg.forEach(unsub => unsub());
-        }
+	on(typeOrCallbacks, callback = null, statusFilter = null) {
+		if (_.isObject(typeOrCallbacks)) {
+			const unreg = _.map(typeOrCallbacks, (cb, keyy) =>
+				this.on(keyy, cb, statusFilter)
+			);
 
-        if (!_.isFunction(callback)) {
-            throw new Error('callback must be type function');
-        }
-        
-        const type = typeOrCallbacks;
-        const handler = {statusFilter, callback};
+			return () => unreg.forEach(unsub => unsub());
+		}
 
-        if (!this._handlers.hasOwnProperty(type))
-			this._handlers[type] = [handler];
-		else
-			this._handlers[type].push(handler);
+		if (!_.isFunction(callback)) {
+			throw new Error("callback must be type function");
+		}
+
+		const type = typeOrCallbacks;
+		const handler = { statusFilter, callback };
+
+		if (!this._handlers.hasOwnProperty(type)) this._handlers[type] = [handler];
+		else this._handlers[type].push(handler);
 
 		return () => {
 			const handlers = this._handlers[type];
 			const index = handlers.indexOf(handler);
-			if (index == -1)
-				return;
+			if (index == -1) return;
 
 			handlers.splice(index, 1);
 		};
-    }
+	}
 
-    onRequest(typeOrCallbacks, callback = null) {
+	onRequest(typeOrCallbacks, callback = null) {
 		return this.on(typeOrCallbacks, callback, A.STATUS_REQUEST);
 	}
 
@@ -52,25 +49,25 @@ export class Dispatcher {
 		return this.on(typeOrCallbacks, callback, A.STATUS_SUCCESS);
 	}
 
-    on$(type) {
-        return new Observable(subscriber => {
-            const unsub = this.on(type, value => subscriber.next(value));
-        });
-    }
+	on$(type) {
+		return new Observable(subscriber => {
+			return this.on(type, value => subscriber.next(value));
+		});
+	}
 
-    onRequest$(type) {
+	onRequest$(type) {
 		return this.on$(type).filter(action => action.status == A.STATUS_REQUEST);
 	}
 
 	onFail$(type) {
 		return this.on$(type).filter(action => action.status == A.STATUS_FAIL);
-    }
-    
-    onSuccess$(type) {
+	}
+
+	onSuccess$(type) {
 		return this.on$(type).filter(action => action.status == A.STATUS_SUCCESS);
 	}
 
-    emit(action) {
+	emit(action) {
 		if (this._inEmit) {
 			this._emitBuffer.push(action);
 			return;
@@ -81,7 +78,7 @@ export class Dispatcher {
 
 		if (this._handlers.hasOwnProperty("*"))
 			this._handlers["*"].forEach(h => invokeHandler(action, h));
-		
+
 		if (this._handlers.hasOwnProperty(action.type))
 			this._handlers[action.type].forEach(h => invokeHandler(action, h));
 
@@ -92,9 +89,9 @@ export class Dispatcher {
 		for (let subAction of buffer) {
 			this.emit(subAction);
 		}
-    }
-    
-    request(action) {
+	}
+
+	request(action) {
 		this.emit(A.request(action));
 	}
 
@@ -107,16 +104,13 @@ export class Dispatcher {
 	}
 
 	respond(action, validator) {
-		if (validator.didFail)
-			this.fail(action, validator.message);
-		else
-			this.succeed(action);
+		if (validator.didFail) this.fail(action, validator.message);
+		else this.succeed(action);
 	}
 }
 
-function invokeHandler(action, {statusFilter, callback}) {
-	if (statusFilter && statusFilter != action.status)
-		return;
+function invokeHandler(action, { statusFilter, callback }) {
+	if (statusFilter && statusFilter != action.status) return;
 
 	callback(action);
 }
