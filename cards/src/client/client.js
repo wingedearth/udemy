@@ -20,7 +20,6 @@ const stores = createStores(services);
 
 // --------------------------------------
 // Render
-
 function main() {
 	const routes = require('./routes').default();
 	console.log('routes:', routes);
