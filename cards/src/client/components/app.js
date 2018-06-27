@@ -1,5 +1,6 @@
 import './app.scss';
 import React, {Component} from 'react';
+import dialogTypes from './dialogs';
 
 class AppContainer extends Component {
 	componentDidMount() {
